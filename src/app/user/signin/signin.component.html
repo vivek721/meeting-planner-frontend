@@ -1,0 +1,71 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">Meeting App</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" (click)="goToSignUp()">SignUp </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="d-flex justify-content-center h-100">
+    <div class="card">
+      <div class="card-header">
+        <h3>Sign-In</h3>
+      </div>
+      <div class="card-body">
+        <form>
+          <label for="username">Email</label>
+          <div class="input-group form-group">
+            <input type="email" [(ngModel)]="emailId" name="emailId" #mailId="ngModel" class="form-control"
+              placeholder="Email" />
+          </div>
+          <label for="username">Password</label>
+          <div class="input-group form-group">
+            <input type="password" [(ngModel)]="userPassword" name="userPassword" class="form-control"
+              placeholder="password" />
+          </div>
+          <div class="form-group">
+            <input type="submit" value="Login" class="btn login_btn" (click)="signinFn()" />
+          </div>
+        </form>
+      </div>
+      <div class="card-footer">
+        <div class="d-flex justify-content-center" *ngIf="mailId">
+          <button class="btn btn-outline-info" data-toggle="modal" data-target="#forgotPasswordModal">Forgot your
+            password?</button>
+        </div>
+
+        <!-- Forgot password model -->
+        <div class="modal fade" id="forgotPasswordModal" tabindex="-1" role="dialog"
+          aria-labelledby="forgotPasswordModalcenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="forgotPasswordModalLongTitle">Please Enter Email Id</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+                <span aria-hidden="true">&times;</span>
+              </div>
+              <div class="modal-body">
+
+                <input type="email" class="form-control model" [(ngModel)]="forgotPasswordEmail"
+                  name="forgotPasswordEmail" id="forgotPasswordEmail">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-outline-success" (click)="resetPassword()">Submit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

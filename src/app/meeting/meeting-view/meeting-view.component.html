@@ -1,0 +1,34 @@
+<Header class="header">Welcome: {{userName|titlecase}}
+  <button type="button" class="btn btn-info logout" (click)="logout()">Logout</button>
+</Header>
+<div class="container-fluid">
+  <ng-container *ngIf="options">
+    <ng-fullcalendar #fullcalendar (dateClick)="dateClick($event)" (eventDragStop)="eventDragStop($event)"
+      [eventsModel]="eventsModel" [options]="options" (eventClick)="eventClick($event)"></ng-fullcalendar>
+  </ng-container>
+</div>
+
+
+<p-dialog id="dateDialog" [(visible)]="displayDate">
+  <p-header>
+    {{startDate}}
+  </p-header>
+  <div>Please Click on an event to view your scheduled meetings</div>
+  <p-footer>
+    <button type=" button" class="btn btn-outline-danger" (click)="displayDate=false">Close</button>
+  </p-footer>
+</p-dialog>
+
+<p-dialog id="dateDialog" [(visible)]="displayEvent">
+  <p-header>
+    Your Meeting
+  </p-header>
+  <div><b>Starts:</b> <input type="text" class="form-control" [value]="startDate" disabled="true"> <br>
+    <b>Ends :</b> <input type="text" class="form-control" [value]="endDate" disabled="true"> <br>
+    <b>Agenda:</b> <input type="text" class="form-control" [value]="eventTitle" disabled="true">
+  </div>
+
+  <p-footer>
+    <button type=" button" class="btn btn-outline-danger" (click)="displayEvent=false">Close</button>
+  </p-footer>
+</p-dialog>

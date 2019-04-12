@@ -1,0 +1,30 @@
+p {
+  font-family: Lato;
+}
+
+.container-fluid {
+  background-color: white;
+}
+
+#wrapper {
+  background: white;
+  padding-left: 25px;
+  /*  transition: all 0.4s ease 0s; */
+}
+
+header {
+  color: whitesmoke;
+  text-align: center;
+  font-size: 30px;
+  background: rgba(0, 0, 0, 0.4)
+}
+
+.list {
+  color: white
+}
+
+.sidebarButton {
+  float: left;
+  background-color: dimgray;
+  margin: 5px
+}

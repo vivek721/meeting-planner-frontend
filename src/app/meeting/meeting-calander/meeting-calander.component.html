@@ -1,0 +1,55 @@
+<div>
+  <div>
+    <Header class="header">Welcome {{userName | titlecase}}
+      <button pButton type="button" class="sidebarButton" (click)="visibleSidebar1 = true" icon="pi pi-bars"></button>
+    </Header>
+  </div>
+  <p-sidebar [(visible)]="visibleSidebar1" [baseZIndex]="10000">
+    <div class="p-3 text-white textCapitalize textCenter">
+      <button (click)="logout()" class="btn btn-info customButton">
+        Logout
+      </button>
+    </div>
+    <ul class="list" style="color: black">
+      <li class="p-2 typeOfChats">
+        All Users:
+      </li>
+    </ul>
+  </p-sidebar>
+  <!--  <div id="sidebar-wrapper">
+    <nav id="spy">
+      <div class="p-3 text-white textCapitalize textCenter">
+        {{firstName}}
+        <i class="fa fa-circle online" *ngIf="disconnectedSocket == false"></i>
+        <i class="fa fa-circle offline" *ngIf="disconnectedSocket == true"></i>
+        <br />
+        <br />
+        <button (click)="logout()" class="btn btn-info customButton">
+          Logout
+        </button>
+      </div>
+      <ul class="list">
+        <li class="p-2 typeOfChats">
+          All Users:
+        </li>
+        <li [ngClass]="{ activeChat: user.chatting == true }" *ngFor="let user of userList"
+          (click)="userSelectedToChat(user.userId, user.name)">
+          <div class="userPresence" *ngIf="user.userId != userInfo.userId">
+            <app-user-details [userFirstName]="user.name" [userLastName]="''" [userStatus]="'online'"
+              [messageRead]="user.unread"></app-user-details>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div> -->
+
+  <div class="container-fluid">
+
+
+    <ng-container *ngIf="options">
+      <ng-fullcalendar #fullcalendar (dateClick)="dateClick($event)" (clickButton)="clickButton($event)"
+        (eventDragStop)="eventDragStop($event)" [eventsModel]="eventsModel" [options]="options"
+        (eventClick)="eventClick($event)"></ng-fullcalendar>
+    </ng-container>
+  </div>
+</div>

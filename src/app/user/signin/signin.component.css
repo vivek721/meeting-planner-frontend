@@ -1,0 +1,31 @@
+.card {
+  height: 500px;
+  width: 50%;
+  margin-top: 10%;
+  margin-bottom: auto;
+  color: white;
+  width: 400px;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.login_btn {
+  color: black;
+  background-color: mediumorchid;
+  margin-top: 20px;
+  width: 100px;
+  float: right;
+}
+
+.login_btn:hover {
+  color: black;
+  background-color: white;
+}
+
+label {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.modal-title {
+  color: black;
+}

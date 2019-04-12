@@ -1,0 +1,20 @@
+p {
+  font-family: Lato;
+}
+
+.container-fluid {
+  background-color: white;
+  margin-top: 2px
+}
+
+header {
+  color: whitesmoke;
+  text-align: center;
+  font-size: 30px;
+  background: rgba(0, 0, 0, 0.4)
+}
+
+.logout {
+  margin: 2px;
+  float: right
+}
