@@ -45,23 +45,24 @@ export class SigninComponent implements OnInit {
 
             this.Cookie.set("authtoken", apiResponse.data.authToken);
 
-            this.Cookie.set("receiverId", apiResponse.data.userDetails.userId);
+            this.Cookie.set("userId", apiResponse.data.userDetails.userId);
 
             this.Cookie.set(
-              "receiverName",
+              "userName",
               apiResponse.data.userDetails.firstName +
                 " " +
                 apiResponse.data.userDetails.lastName
             );
-
             this.appService.setUserInfoInLocalStorage(
               apiResponse.data.userDetails
             );
             if (apiResponse.data.userDetails.isAdmin === true) {
+              this.toastr.success("Admin Logged in");
               this.router.navigate([
-                `/meetingPlan/${apiResponse.data.userDetails.userId}`
+                `/meetingPlan/admin/${apiResponse.data.userDetails.userId}`
               ]);
             } else {
+              this.toastr.success("User logged in");
               this.router.navigate([
                 `/meetingView/${apiResponse.data.userDetails.userId}`
               ]);

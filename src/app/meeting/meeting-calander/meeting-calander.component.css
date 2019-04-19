@@ -20,11 +20,23 @@ header {
 }
 
 .list {
-  color: white
+  color: white;
 }
 
 .sidebarButton {
   float: left;
   background-color: dimgray;
   margin: 5px
+}
+
+.typeOfUsers {
+  color: black;
+  font-size: 25px;
+  margin-bottom: 1em;
+  width: 150px
+}
+
+.userList {
+  height: 30px;
+  width: 200px;
 }

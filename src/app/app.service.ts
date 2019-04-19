@@ -12,7 +12,8 @@ import { CookieService } from "ngx-cookie-service";
   providedIn: "root"
 })
 export class AppService {
-  baseURL = "http://localhost:3000/api/v1";
+  baseURL = "http://api.edvivek.xyz/api/v1";
+  /* baseURL = "http://localhost:3000/api/v1"; */
   constructor(private http: HttpClient, private Cookie: CookieService) {}
 
   public getUserInfoFromLocalstorage = () => {

@@ -8,6 +8,7 @@ import { MeetingViewComponent } from "./meeting-view/meeting-view.component";
 import { DialogModule } from "primeng/dialog";
 import { SidebarModule } from "primeng/sidebar";
 import { ButtonModule } from "primeng/button";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [MeetingCalanderComponent, MeetingViewComponent],
@@ -18,9 +19,16 @@ import { ButtonModule } from "primeng/button";
     DialogModule,
     SidebarModule,
     ButtonModule,
+    FormsModule,
     RouterModule.forChild([
-      { path: "meetingPlan/:userId", component: MeetingCalanderComponent },
-      { path: "meetingView/:userId", component: MeetingViewComponent }
+      {
+        path: "meetingPlan/admin/:userId",
+        component: MeetingCalanderComponent
+      },
+      {
+        path: "meetingView/:userId",
+        component: MeetingViewComponent
+      }
     ])
   ]
 })
