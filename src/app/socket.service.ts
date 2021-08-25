@@ -11,8 +11,8 @@ import { CookieService } from "ngx-cookie-service";
   providedIn: "root"
 })
 export class SocketService {
-  private baseUrl = "http://api.edvivek.xyz";
-  /* private baseUrl = "http://localhost:3000"; */
+  // private baseUrl = "http://api.edvivek.xyz";
+  private baseUrl = "http://localhost:3000"; 
   private socket;
   constructor(private http: HttpClient, private Cookie: CookieService) {
     this.socket = io(this.baseUrl);

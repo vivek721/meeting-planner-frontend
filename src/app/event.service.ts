@@ -4,8 +4,8 @@ import { HttpClient, HttpParams } from "@angular/common/http";
 
 @Injectable()
 export class EventService {
-  private baseURL = `http://api.edvivek.xyz/api/v1/meeting`;
-  /* private baseURL = `http://localhost:3000/api/v1/meeting`; */
+  // private baseURL = `http://api.edvivek.xyz/api/v1/meeting`;
+  private baseURL = `http://localhost:3000/api/v1/meeting`; 
   constructor(private http: HttpClient) {}
 
   //get events passing userId as param
